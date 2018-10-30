@@ -1,0 +1,50 @@
+<div class="mat-box-shadow margin-333">
+
+    <ngx-datatable class="material bg-white" [columnMode]="'force'" [headerHeight]="50" [footerHeight]="50" [rowHeight]="50"
+      [rows]="rows">
+      <ngx-datatable-column name="Division">
+        <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+          <span>
+            {{value}}
+          </span>
+        </ng-template>
+      </ngx-datatable-column>
+
+
+      <ngx-datatable-column prop="serialNo" name="Roll No">
+        <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row" let-value="value">
+          <span>
+            {{value}}
+          </span>
+        </ng-template>
+      </ngx-datatable-column>
+
+
+
+      <ngx-datatable-column prop="firstName" name="First Name">
+        <ng-template ngx-datatable-cell-template let-value="value">
+          {{value}}
+        </ng-template>
+      </ngx-datatable-column>
+
+
+      <ngx-datatable-column prop="lastName" name="Last Name">
+        <ng-template ngx-datatable-cell-template let-value="value">
+          {{value}}
+        </ng-template>
+      </ngx-datatable-column>
+
+      <ngx-datatable-column prop="score" name="Score">
+
+        <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+
+        {{value}}
+        </ng-template>
+      </ngx-datatable-column>
+
+    </ngx-datatable>
+
+  </div>
+  <div class="margin-333">
+    <button  mat-raised-button color="primary" (click)="onEdit()">Edit Result</button>
+  </div>

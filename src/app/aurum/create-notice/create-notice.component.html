@@ -1,0 +1,101 @@
+<mat-card class="p-0">
+  <mat-card-title class="">
+    <div class="card-title-text">Notice</div>
+    <mat-progress-bar mode="determinate" class="session-progress"></mat-progress-bar>
+    <mat-divider></mat-divider>
+  </mat-card-title>
+  <mat-card-content>
+    <form [formGroup]="basicForm" (ngSubmit)="onSubmit()">
+      <div fxLayout="row wrap">
+        <div fxFlex="100" fxFlex.gt-xs="50" class="pr-1">
+
+
+          <div class="pb-1">
+            <mat-form-field class="full-width">
+              <input matInput name="title" formControlName="title" placeholder="Notice Title" value="">
+            </mat-form-field>
+            <small *ngIf="basicForm.controls['title'].hasError('required') && basicForm.controls['title'].touched"
+              class="form-error-msg"> Title of this notice is required </small>
+          </div>
+
+          <div class="pb-1">
+            <mat-form-field class="full-width">
+              <input matInput name="date" formControlName="date" placeholder="Date" [matDatepicker]="appDatepicker">
+
+              <mat-datepicker-toggle matSuffix [for]="appDatepicker"></mat-datepicker-toggle>
+            </mat-form-field>
+            <mat-datepicker #appDatepicker></mat-datepicker>
+          </div>
+
+
+
+          <div class="pb-1">
+            <br>
+            <Label>Receiver</Label>
+            <mat-radio-group name="receiver" formControlName="receiver">
+              <mat-radio-button value="all">Everyone</mat-radio-button>
+              <mat-radio-button value="teachers">Only Teacher</mat-radio-button>
+              <mat-radio-button value="students">Only Students</mat-radio-button>
+
+            </mat-radio-group>
+          </div>
+
+
+        </div>
+
+
+        <div fxFlex="100" fxFlex.gt-xs="50" class="pr-1">
+
+          <div class="pb-1">
+            <mat-form-field class="full-width">
+              <input matInput name="sender" formControlName="sender" placeholder="Sender" value="">
+            </mat-form-field>
+            <small *ngIf="basicForm.controls['sender'].hasError('required') && basicForm.controls['sender'].touched"
+              class="form-error-msg"> Sender of the notice is required</small>
+          </div>
+
+
+          <div class="pb-1">
+            <mat-form-field class="full-width">
+              <input matInput name="designation" formControlName="designation" placeholder="Designation" value="">
+            </mat-form-field>
+            <small *ngIf="basicForm.controls['designation'].hasError('required') && basicForm.controls['designation'].touched"
+              class="form-error-msg"> Type in the designation of the sender </small>
+          </div>
+
+
+          <div class="pb-1">
+            <mat-form-field class="full-width">
+              <input matInput name="department" formControlName="department" placeholder="Department" value="">
+            </mat-form-field>
+            <small *ngIf="basicForm.controls['department'].hasError('required') && basicForm.controls['department'].touched"
+              class="form-error-msg"> Type in the department. </small>
+          </div>
+
+        </div>
+
+
+        <div class="pb-1" class="full-width">
+          <textarea ng-model="myTextarea" cols=100 rows=7 formControlName="details" placeholder="Notice Details" value="">
+
+            </textarea>
+          <small *ngIf="basicForm.controls['details'].hasError('required') && basicForm.controls['details'].touched"
+            class="form-error-msg"> Details of this notice is required </small>
+        </div>
+
+
+        <div fxFlex="100" fxFlex.gt-xs="50">
+          <div class="pb-1 pt-05">
+            <mat-checkbox name="agreed" formControlName="agreed" class="pb-1">I have reviewed the notice.</mat-checkbox>
+
+            <small *ngIf="basicForm.controls['agreed'].hasError('agreed') && basicForm.controls['agreed'].touched"
+              class="form-error-msg"> You must review before saving! </small>
+          </div>
+        </div>
+      </div>
+
+
+      <button mat-raised-button color="primary" [disabled]="basicForm.invalid">Submit</button>
+    </form>
+  </mat-card-content>
+</mat-card>

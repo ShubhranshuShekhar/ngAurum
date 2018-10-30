@@ -1,0 +1,87 @@
+<!-- <div class="margin-333">
+    <button mat-raised-button color="primary" (click)="onCreateExam()">Create Test</button>
+  </div> -->
+
+
+
+<div fxLayout="row wrap" fxLayout.xs="column">
+  <div fxFlex.gt-md="20%" fxFlex.gt-sm="33%" *ngFor="let exam of exams | async" (click)="onClickExam(exam)">
+
+    <mat-card class="p-0">
+      <mat-card-title class="mat-bg-primary m-0">
+        <div class="card-title-text">
+          <div fxLayout="row">
+            <span fxFlex fxFill>{{exam.subject}} {{exam.division}} </span>
+            <!-- <span fxFlex fxLayoutAlign="end center">{{exam.maxMarks}} </span> -->
+            {{exam.maxMarks}}
+          </div>
+          <span class="footerText">{{exam.state}}</span>
+        </div>
+      </mat-card-title>
+      <mat-card-content>
+        <div class="testContent">
+
+          <img class=" center .pb-1 subjectStyle" mat-card-image src="assets/images/subjects/{{exam.subject | lowercase}}.png">
+          <br>
+          <p>
+            {{exam.topic}}
+          </p>
+          <b>
+            <p style="padding: 0px; margin: 0px">{{exam.category}}</p>
+          </b>
+          <mat-divider class="mb-1"></mat-divider>
+          <b>
+            <p class="footerText">{{exam.evalDate.toDate() | date:'mediumDate'}}</p>
+          </b>
+        </div>
+
+      </mat-card-content>
+
+    </mat-card>
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div fxLayout="row wrap" fxLayout.xs="column">
+        <div fxFlex="100" fxFlex.gt-md="20%" fxFlex.gt-sm="50"  *ngFor="let exam of exams | async"  >
+
+          <mat-card class="p-0">
+            <mat-card-title class="mat-bg-primary m-0">
+              <div class="card-title-text">
+                <span>{{exam.subject}} {{exam.division}} </span>
+              </div>
+            </mat-card-title>
+
+            <mat-card-content>
+                <img class=".pb-1 subjectStyle" mat-card-image src="assets/images/subjects/{{exam.subject | lowercase}}.png">
+              <br>
+              <p>
+                {{exam.topic}}
+              </p>
+
+
+
+              <mat-divider class="mb-1"></mat-divider>
+              <b><p>{{exam.category}}</p> </b>
+
+            </mat-card-content>
+          </mat-card>
+
+        </div>
+      </div> -->

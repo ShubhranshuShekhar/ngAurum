@@ -1,0 +1,47 @@
+<div class="margin-333">
+  <button mat-raised-button color="primary" (click)="onAddNotice()">Create Notice</button>
+</div>
+
+<div fxLayout="row wrap" fxLayout.xs="column">
+  <div fxFlex="100" fxFlex.gt-md="33%" fxFlex.gt-sm="50" *ngFor="let notice of notices | async">
+
+
+    <mat-card class="p-0">
+      <mat-card-title class="mat-bg-primary m-0">
+          <div class="card-title-text">
+
+          <div fxLayout="row">
+              <span fxFlex >{{notice.title}} </span>
+            </div>
+
+          </div>
+
+      </mat-card-title>
+
+      <mat-card-content>
+          <div fxLayout="row" class="footerText">
+              <span fxFlex fxFill>Addressed to {{notice.addressedTo}} </span>
+              <!-- <span fxFlex fxLayoutAlign="end center">{{exam.maxMarks}} </span> -->
+              {{notice.date.toDate() | date:'mediumDate'}}
+            </div>
+          <mat-divider></mat-divider>
+
+        <br>
+        <p>
+          {{notice.details}}
+
+        </p>
+        <mat-divider class="mb-1"></mat-divider>
+        <h4>
+          {{notice.sender}}
+        </h4>
+        <span>{{notice.designation}}, {{notice.department}}</span>
+        <br>
+        <div fxLayout="row" fxLayoutAlign="end">
+            <button mat-button color="warn" class="mr-1" (click)="deleteNotice(notice.docId)">Delete</button>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+  </div>
+</div>
