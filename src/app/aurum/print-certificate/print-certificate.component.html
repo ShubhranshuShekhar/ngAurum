@@ -1,3 +1,24 @@
-<p>
-  print-certificate works!
-</p>
+<div class="margin-333">
+  <button mat-raised-button color="primary" (click)="onPrintCertificate()">Print Transfer Certificate</button>
+</div>
+
+<div id="print-section">
+<div style="width:800px; height:600px; padding:20px; text-align:center; border: 10px solid #787878">
+  <div style="width:750px; height:550px; padding:20px; text-align:center; border: 5px solid #787878">
+         <span style="font-size:50px; font-weight:bold">Transfer Certificate</span>
+         <br><br>
+         <span style="font-size:25px"><i>This is to certify that</i></span>
+         <br><br>
+         <span style="font-size:30px"><b>{{firstName}} {{lastName}}</b></span><br/><br/>
+         <span style="font-size:25px"><i>was a student of Oxeye School of Technology studying in </i></span> <br/><br/>
+         <span style="font-size:30px">{{division}}</span> <br/><br/>
+         <span style="font-size:25px"><i>He/She bears a good moral charater. </i></span> <br/><br/>
+         <span style="font-size:25px"><i>We wish him/her all the very best for future endeavours.</i></span> <br/><br/>
+
+         <!-- <span style="font-size:20px">with score of <b>$grade.getPoints()%</b></span> <br/><br/><br/><br/> -->
+         <!-- <span style="font-size:25px"><i>dated</i></span><br> -->
+        <!-- #set ($dt = $DateFormatter.getFormattedDate($grade.getAwardDate(), "MMMM dd, yyyy")) -->
+        <!-- <span style="font-size:30px">$dt</span> -->
+  </div>
+  </div>
+  </div>
