@@ -440,7 +440,13 @@ export class NavigationService {
       tooltip: 'Exams',
       icon: 'assignment',
       state: 'exam',
-      // badges: [{ color: 'accent', value: '100+' }],
+    },
+    {
+      name: 'Certificate',
+      type: 'link',
+      tooltip: 'Trasnfer Certificate',
+      icon: 'print',
+      state: 'transfer_certificate',
     },
     {
       name: 'DASHBOARD1',

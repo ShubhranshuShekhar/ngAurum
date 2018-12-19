@@ -10,7 +10,8 @@ import { AdminLayoutComponent } from './shared/components/layouts/admin-layout/a
 import { AuthLayoutComponent } from './shared/components/layouts/auth-layout/auth-layout.component';
 import { AuthGuard } from './shared/services/auth/auth.guard';
 import { CreateNoticeComponent } from './aurum/create-notice/create-notice.component';
-
+import { CertificateComponent } from "./aurum/certificate/certificate.component";
+import { PrintCertificateComponent } from './aurum/print-certificate/print-certificate.component';
 export const rootRouterConfig: Routes = [
   {
     path: '',
@@ -82,6 +83,17 @@ export const rootRouterConfig: Routes = [
         component: EditResultComponent,
         data: { title: 'Edit Result', breadcrumb: 'Edit Result'}
       },
+// --- transfer certificate -----
+{
+  path: 'transfer_certificate',
+  component: CertificateComponent,
+  data: { title: 'Transfer Certificate', breadcrumb: 'Transfer Certificate'}
+},
+{
+  path: 'print_certificate',
+  component: PrintCertificateComponent,
+  data: { title: 'Print Certificate', breadcrumb: 'Print Certificate'}
+},
       {
         path: 'dashboard',
         loadChildren: './views/dashboard/dashboard.module#DashboardModule',
