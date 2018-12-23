@@ -435,6 +435,13 @@ export class NavigationService {
       // badges: [{ color: 'accent', value: '100+' }],
     },
     {
+      name: 'News',
+      type: 'link',
+      tooltip: 'News',
+      icon: 'wallpaper',
+      state: 'news',
+},
+    {
       name: 'Exams',
       type: 'link',
       tooltip: 'Exams',

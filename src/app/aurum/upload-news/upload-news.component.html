@@ -1,0 +1,58 @@
+<!-- <button mat-raised-button color="primary" (click)="onUploadNews()">Create News</button> -->
+
+<!-- <input mat-raised-button color="primary" type="file" accept="image/*" (change)="onFileChanged($event)"> -->
+<div class="margin-333">
+  <input accept=".png,.jpg"  style="display: none" type="file" (change)="onFileChanged($event)" #fileInput>
+  <button mat-raised-button color="primary" (click)="fileInput.click()">{{isSelected ? 'Change' : 'Select'}} Image</button>
+</div>
+
+
+<mat-card-content class="margin-333">
+  <div class="margin-333">
+    <!-- <img mat-card-image src="assets/images/photo-2.jpg"> -->
+    <img *ngIf="url"  [src]="url" height="200"> <br/>
+
+  </div>
+  <form  *ngIf="url" [formGroup]="basicForm" (ngSubmit)="onSubmitNews()">
+    <div fxLayout="row wrap">
+      <div fxFlex="100" fxFlex.gt-xs="50" class="pr-1">
+        <div class="pb-1">
+          <mat-form-field class="full-width">
+            <input matInput name="title" formControlName="title" placeholder="News Title" value="">
+          </mat-form-field>
+          <small *ngIf="basicForm.controls['title'].hasError('required') && basicForm.controls['title'].touched" class="form-error-msg">
+            Title of the article is required </small>
+        </div>
+        <div class="pb-1">
+          <mat-form-field class="full-width">
+            <input matInput name="date" formControlName="date" placeholder="Date" [matDatepicker]="appDatepicker">
+            <mat-datepicker-toggle matSuffix [for]="appDatepicker"></mat-datepicker-toggle>
+          </mat-form-field>
+          <mat-datepicker #appDatepicker></mat-datepicker>
+        </div>
+       
+        <div class="pb-1">
+            <br>
+            <Label>Category</Label>
+            <mat-radio-group name="receiver" formControlName="category" fxLayout="column">
+              <mat-radio-button value="Environment">Environment</mat-radio-button>
+              <mat-radio-button value="Technology">Technology</mat-radio-button>
+              <mat-radio-button value="Current Affairs">Current Affairs</mat-radio-button>
+              <mat-radio-button value="Science">Science</mat-radio-button>
+              <mat-radio-button value="General Knowdledge">General Knowdledge</mat-radio-button>
+              <mat-radio-button value="History">History</mat-radio-button>
+            </mat-radio-group>
+          </div>
+
+        <div>
+          <textarea ng-model="myTextarea" cols=133 rows=16 formControlName="details" placeholder="News Details" value="">
+          </textarea>
+          <small *ngIf="basicForm.controls['details'].hasError('required') && basicForm.controls['details'].touched"
+            class="form-error-msg"> Details of this article is required </small>
+        </div>
+      </div>
+    </div>
+
+    <button mat-raised-button color="primary" [disabled]="basicForm.invalid">Save</button>
+  </form>
+</mat-card-content>

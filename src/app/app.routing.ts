@@ -12,6 +12,8 @@ import { AuthGuard } from './shared/services/auth/auth.guard';
 import { CreateNoticeComponent } from './aurum/create-notice/create-notice.component';
 import { CertificateComponent } from "./aurum/certificate/certificate.component";
 import { PrintCertificateComponent } from './aurum/print-certificate/print-certificate.component';
+import { NewsComponent } from './aurum/news/news.component';
+import { UploadNewsComponent } from './aurum/upload-news/upload-news.component';
 export const rootRouterConfig: Routes = [
   {
     path: '',
@@ -33,7 +35,7 @@ export const rootRouterConfig: Routes = [
       {
         path: 'sessions',
         loadChildren: './views/sessions/sessions.module#SessionsModule',
-        data: { title: 'User'}
+        data: { title: 'User' }
       }
     ]
   },
@@ -46,138 +48,149 @@ export const rootRouterConfig: Routes = [
         path: 'notice',
         // loadChildren: './aurum/notice/notic',
         component: NoticeComponent,
-        data: { title: 'Notice', breadcrumb: 'NOTICE'}
+        data: { title: 'Notice', breadcrumb: 'NOTICE' }
       },
       {
         path: 'create_notice',
         // loadChildren: './aurum/notice/notic',
         component: CreateNoticeComponent,
-        data: { title: 'Create Notice', breadcrumb: 'CREATE NOTICE'}
+        data: { title: 'Create Notice', breadcrumb: 'CREATE NOTICE' }
       },
       {
         path: 'exam',
         // loadChildren: './aurum/notice/notic',
         component: DisplayExamComponent,
-        data: { title: 'Exams', breadcrumb: 'Exams'}
+        data: { title: 'Exams', breadcrumb: 'Exams' }
       },
       {
         path: 'create_exam',
         // loadChildren: './aurum/notice/notic',
         component: CreateExamComponent,
-        data: { title: 'Create Exam', breadcrumb: 'Create Exam'}
+        data: { title: 'Create Exam', breadcrumb: 'Create Exam' }
       },
       {
         path: 'evaluate_test',
         // loadChildren: './aurum/notice/notic',
         component: EvaluateTestComponent,
-        data: { title: 'Evaluate Test', breadcrumb: 'Evaluate Test'}
+        data: { title: 'Evaluate Test', breadcrumb: 'Evaluate Test' }
       },
       {
         path: 'display_result',
         // loadChildren: './aurum/notice/notic',
         component: DisplayResultComponent,
-        data: { title: 'Result', breadcrumb: 'Result'}
+        data: { title: 'Result', breadcrumb: 'Result' }
       },
       {
         path: 'edit_result',
         component: EditResultComponent,
-        data: { title: 'Edit Result', breadcrumb: 'Edit Result'}
+        data: { title: 'Edit Result', breadcrumb: 'Edit Result' }
       },
-// --- transfer certificate -----
-{
-  path: 'transfer_certificate',
-  component: CertificateComponent,
-  data: { title: 'Transfer Certificate', breadcrumb: 'Transfer Certificate'}
-},
-{
-  path: 'print_certificate',
-  component: PrintCertificateComponent,
-  data: { title: 'Print Certificate', breadcrumb: 'Print Certificate'}
-},
+      // --- upload news  -----
+      {
+        path: 'news',
+        component: NewsComponent,
+        data: { title: 'News', breadcrum: 'News' }
+      },
+      {
+      path: 'upload_news',
+      component: UploadNewsComponent,
+      data: { title: 'Publish News', breadcrum: 'Publish News' }
+    },      
+      // --- transfer certificate -----
+      {
+        path: 'transfer_certificate',
+        component: CertificateComponent,
+        data: { title: 'Transfer Certificate', breadcrumb: 'Transfer Certificate' }
+      },
+      {
+        path: 'print_certificate',
+        component: PrintCertificateComponent,
+        data: { title: 'Print Certificate', breadcrumb: 'Print Certificate' }
+      },
       {
         path: 'dashboard',
         loadChildren: './views/dashboard/dashboard.module#DashboardModule',
-        data: { title: 'Dashboard', breadcrumb: 'DASHBOARD'}
+        data: { title: 'Dashboard', breadcrumb: 'DASHBOARD' }
       },
       {
         path: 'material',
         loadChildren: './views/material/app-material.module#AppMaterialModule',
-        data: { title: 'Material', breadcrumb: 'MATERIAL'}
+        data: { title: 'Material', breadcrumb: 'MATERIAL' }
       },
       {
         path: 'dialogs',
         loadChildren: './views/app-dialogs/app-dialogs.module#AppDialogsModule',
-        data: { title: 'Dialogs', breadcrumb: 'DIALOGS'}
+        data: { title: 'Dialogs', breadcrumb: 'DIALOGS' }
       },
       {
         path: 'profile',
         loadChildren: './views/profile/profile.module#ProfileModule',
-        data: { title: 'Profile', breadcrumb: 'PROFILE'}
+        data: { title: 'Profile', breadcrumb: 'PROFILE' }
       },
       {
         path: 'others',
         loadChildren: './views/others/others.module#OthersModule',
-        data: { title: 'Others', breadcrumb: 'OTHERS'}
+        data: { title: 'Others', breadcrumb: 'OTHERS' }
       },
       {
         path: 'tables',
         loadChildren: './views/tables/tables.module#TablesModule',
-        data: { title: 'Tables', breadcrumb: 'TABLES'}
+        data: { title: 'Tables', breadcrumb: 'TABLES' }
       },
       {
         path: 'tour',
         loadChildren: './views/app-tour/app-tour.module#AppTourModule',
-        data: { title: 'Tour', breadcrumb: 'TOUR'}
+        data: { title: 'Tour', breadcrumb: 'TOUR' }
       },
       {
         path: 'forms',
         loadChildren: './views/forms/forms.module#AppFormsModule',
-        data: { title: 'Forms', breadcrumb: 'FORMS'}
+        data: { title: 'Forms', breadcrumb: 'FORMS' }
       },
       {
         path: 'charts',
         loadChildren: './views/charts/charts.module#AppChartsModule',
-        data: { title: 'Charts', breadcrumb: 'CHARTS'}
+        data: { title: 'Charts', breadcrumb: 'CHARTS' }
       },
       {
         path: 'map',
         loadChildren: './views/map/map.module#AppMapModule',
-        data: { title: 'Map', breadcrumb: 'MAP'}
+        data: { title: 'Map', breadcrumb: 'MAP' }
       },
       {
         path: 'dragndrop',
         loadChildren: './views/dragndrop/dragndrop.module#DragndropModule',
-        data: { title: 'Drag and Drop', breadcrumb: 'DND'}
+        data: { title: 'Drag and Drop', breadcrumb: 'DND' }
       },
       {
         path: 'inbox',
         loadChildren: './views/app-inbox/app-inbox.module#AppInboxModule',
-        data: { title: 'Inbox', breadcrumb: 'INBOX'}
+        data: { title: 'Inbox', breadcrumb: 'INBOX' }
       },
       {
         path: 'calendar',
         loadChildren: './views/app-calendar/app-calendar.module#AppCalendarModule',
-        data: { title: 'Calendar', breadcrumb: 'CALENDAR'}
+        data: { title: 'Calendar', breadcrumb: 'CALENDAR' }
       },
       {
         path: 'chat',
         loadChildren: './views/app-chats/app-chats.module#AppChatsModule',
-        data: { title: 'Chat', breadcrumb: 'CHAT'}
+        data: { title: 'Chat', breadcrumb: 'CHAT' }
       },
       {
         path: 'cruds',
         loadChildren: './views/cruds/cruds.module#CrudsModule',
-        data: { title: 'CRUDs', breadcrumb: 'CRUDs'}
+        data: { title: 'CRUDs', breadcrumb: 'CRUDs' }
       },
       {
         path: 'shop',
         loadChildren: './views/shop/shop.module#ShopModule',
-        data: { title: 'Shop', breadcrumb: 'SHOP'}
+        data: { title: 'Shop', breadcrumb: 'SHOP' }
       },
       {
         path: 'icons',
         loadChildren: './views/mat-icons/mat-icons.module#MatIconsModule',
-        data: { title: 'Icons', breadcrumb: 'MATICONS'}
+        data: { title: 'Icons', breadcrumb: 'MATICONS' }
       }
     ]
   },

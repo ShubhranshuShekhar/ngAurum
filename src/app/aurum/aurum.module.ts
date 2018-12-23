@@ -52,6 +52,8 @@ import { EditResultComponent } from './edit-result/edit-result.component';
 import { CreateAttendanceComponent } from './attendance/create-attendance/create-attendance.component';
 import { CertificateComponent } from './certificate/certificate.component';
 import { PrintCertificateComponent } from './print-certificate/print-certificate.component';
+import { NewsComponent } from './news/news.component';
+import { UploadNewsComponent } from './upload-news/upload-news.component';
 
 @NgModule({
   imports: [
@@ -94,7 +96,7 @@ import { PrintCertificateComponent } from './print-certificate/print-certificate
 
     FlexLayoutModule,
   ],
-  declarations: [NoticeComponent, CreateNoticeComponent, DisplayExamComponent, AurumComponent, CreateExamComponent, EvaluateTestComponent, DisplayResultComponent, EditResultComponent, CreateAttendanceComponent, CertificateComponent, PrintCertificateComponent],
+  declarations: [NoticeComponent, CreateNoticeComponent, DisplayExamComponent, AurumComponent, CreateExamComponent, EvaluateTestComponent, DisplayResultComponent, EditResultComponent, CreateAttendanceComponent, CertificateComponent, PrintCertificateComponent, NewsComponent, UploadNewsComponent],
   bootstrap: [AurumComponent]
 
 })
